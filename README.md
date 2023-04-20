@@ -15,7 +15,7 @@
 - luxon
 - OpenWeatherMap
 
-### [Link to deployed App on Netlify](https://postman-app.netlify.app/)
+### [Link to deployed App on Netlify](https://weather-from-openweathermap.netlify.app/)
 
 ## Available Scripts
 
