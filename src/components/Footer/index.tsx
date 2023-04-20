@@ -14,7 +14,7 @@ const Footer: FC = () => {
         </Typography>
         <Typography variant='body2' color='text.secondary' align='center'>
           {'Copyright © '}
-          <Link color='inherit' href='https://github.com/teetajp/weather-app'>
+          <Link color='inherit' href='https://github.com/MelnikVitali/React-Weather-App'>
             Vitalii Melnik
           </Link>{' '}
           {new Date().getFullYear()}
