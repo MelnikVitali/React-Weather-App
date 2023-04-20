@@ -1,5 +1,5 @@
+import { FC, useEffect } from 'react';
 import { Grid } from '@mui/material';
-import React, { FC, useEffect } from 'react';
 import CityCard from '../CityCard/CityCard';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { getLocalStorageCities } from '../../helpers/localStorage';

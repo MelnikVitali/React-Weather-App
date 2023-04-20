@@ -2,17 +2,19 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import '@fontsource/roboto';
-import StoreProvider from './store/StoreProvider';
-import ThemeProviderWrapper from './theme/ThemeProvider';
+import { ThemeProvider } from '@mui/material/styles';
+import { themeWeather } from './theme/themeWeather';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 import App from './components/App/App';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <StoreProvider>
-    <ThemeProviderWrapper>
+  <Provider store={store}>
+    <ThemeProvider theme={themeWeather}>
       <BrowserRouter>
         <CssBaseline />
         <App />
       </BrowserRouter>
-    </ThemeProviderWrapper>
-  </StoreProvider>,
+    </ThemeProvider>
+  </Provider>,
 );

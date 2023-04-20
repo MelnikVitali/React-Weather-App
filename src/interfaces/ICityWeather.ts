@@ -12,7 +12,8 @@ export interface ICityWeather {
   timezone: number;
   id: number;
   name: string;
-  cod: number;
+  cod: number | string;
+  updatedDate: string;
 }
 
 export interface Coord {

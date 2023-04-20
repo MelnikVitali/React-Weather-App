@@ -1,38 +1,28 @@
 import { FC } from 'react';
-import { Box, SxProps, Theme, Paper } from '@mui/material';
-import moment from 'moment';
-import { HourTemp } from '../../interfaces/HourTemp';
+import { Box, Paper } from '@mui/material';
 import { temperatureFormat } from '../../helpers/temperatureFormat';
-
-const hourTempCardStyle: SxProps<Theme> = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  height: '240px',
-  width: '110px',
-  background: 'white',
-  fontSize: '18px',
-};
+import { DateTime } from 'luxon';
+import { styles } from './styles';
+import { IHourlyForecastList } from '../../interfaces/IHourlyForecast';
 
 interface HourTempCardProps {
   key: number;
-  hourTemp: HourTemp;
+  hourTemp: IHourlyForecastList;
 }
 
 const HourTempCard: FC<HourTempCardProps> = ({ hourTemp }) => {
-  const time = moment(hourTemp.dt_txt).format('HH:mm');
+  const time = DateTime.fromFormat(hourTemp?.dt_txt, 'yyyy-MM-dd HH:mm:ss').toFormat('HH:mm');
   const temp = temperatureFormat(hourTemp.main.temp);
 
   const cardMargin = () => {
     const temp = Math.round(hourTemp.main.temp);
-    return +temp * 4;
+    return +temp * 3;
   };
 
   const margin = cardMargin();
 
   return (
-    <Box sx={hourTempCardStyle}>
+    <Box sx={styles.hourTempCardStyle}>
       <Box mt='7px'>{time}</Box>
       <Box mt='-20px'>
         <img
@@ -41,20 +31,7 @@ const HourTempCard: FC<HourTempCardProps> = ({ hourTemp }) => {
         />
       </Box>
 
-      <Paper
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100%',
-          minHeight: '35px',
-          backgroundColor: 'yellow',
-          borderBottom: '3px solid orange',
-          marginBottom: `${margin}px`,
-        }}
-      >
-        {temp}
-      </Paper>
+      <Paper sx={{ ...styles.hourTempCardPaper, marginBottom: `${margin}px` }}>{temp}</Paper>
     </Box>
   );
 };

@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Box, Button, CircularProgress, Container, Grid, InputBase, Paper } from '@mui/material';
 import { useAppDispatch } from '../../hooks/redux';
 import { addCity } from '../../store/slices/weatherCitySlice';
 import { useGetCityMutation } from '../../store/services/weather/cityWeatherApi';
 import { addToLocalStorage } from '../../helpers/localStorage';
-import CitiesList from '../../components/CitiesList';
-import { styles } from './styles';
+import CitiesList from '../../components/CitiesList/CitiesList';
 import Header from '../../components/Header/Header';
+import { styles } from './styles';
 
 export const HomePage = () => {
   const [cityName, setCityName] = useState<string>('');
-  const [emptySearchInput, setEmptySearchInput] = useState(false);
+  const [emptySearchInput, setEmptySearchInput] = useState<boolean>(false);
 
   const [getCityWeather, { data, error, isLoading }] = useGetCityMutation();
 

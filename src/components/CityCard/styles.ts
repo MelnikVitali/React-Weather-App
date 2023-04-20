@@ -31,6 +31,12 @@ export const styles = {
     overflow: 'hidden',
     textOverflow: 'ellipsis',
   },
+  boxCardContent: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: 'baseline',
+    gap: pxToRem(7),
+  },
   cardActions: {
     display: 'flex',
     justifyContent: 'space-between',

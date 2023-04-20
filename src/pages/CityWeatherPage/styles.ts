@@ -4,10 +4,12 @@ export const styles = {
   container: {
     maxWidth: pxToRem(1900),
     minWidth: pxToRem(500),
-    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
     margin: '0 auto',
     padding: pxToRem(26),
-    paddingBottom: pxToRem(250),
   },
   header: {
     display: 'flex',
@@ -15,7 +17,8 @@ export const styles = {
     alignItems: 'center',
     marginBottom: pxToRem(30),
   },
-
+  title: { span: { color: '#1769aa' }, mb: 4 },
+  titleError: { span: { color: '#d32f2f' }, mb: 4 },
   timeAndUpdateBox: {
     minWidth: pxToRem(600),
     display: 'flex',
@@ -34,9 +37,13 @@ export const styles = {
   },
   contentBox: {
     display: 'flex',
+    justifyContent: 'center',
+    maxWidth: pxToRem(988),
+    minWidth: pxToRem(932),
     fontSize: pxToRem(18),
     marginBottom: pxToRem(20),
-    padding: pxToRem(20),
+    paddingTop: pxToRem(20),
+    paddingBottom: pxToRem(20),
     position: 'relative',
     backgroundColor: 'white',
     borderRadius: pxToRem(10),
@@ -49,5 +56,12 @@ export const styles = {
   buttonBack: {
     fontSize: pxToRem(16),
     minWidth: pxToRem(215),
+  },
+  lastBox: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    paddingLeft: pxToRem(40),
+    paddingBottom: pxToRem(14),
   },
 };

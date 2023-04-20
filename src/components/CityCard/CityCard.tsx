@@ -1,4 +1,5 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
+import { NavLink } from 'react-router-dom';
 import {
   Box,
   Card,
@@ -13,14 +14,12 @@ import {
 import UpdateIcon from '@mui/icons-material/Update';
 import ClearIcon from '@mui/icons-material/Clear';
 import ReadMoreIcon from '@mui/icons-material/ReadMore';
-import moment from 'moment';
 import { temperatureFormat } from '../../helpers/temperatureFormat';
 import { removeSavedCity } from '../../store/slices/weatherCitySlice';
 import { removeLocalStorage } from '../../helpers/localStorage';
 import { useAppDispatch } from '../../hooks/redux';
 import { useGetCityWeatherQuery } from '../../store/services/weather/cityWeatherApi';
 import { styles } from './styles';
-import { NavLink } from 'react-router-dom';
 
 interface CitiesCardProps {
   cityName: string;
@@ -45,10 +44,6 @@ const CityCard: FC<CitiesCardProps> = ({ cityName }) => {
     removeLocalStorage(cityName);
   };
 
-  useEffect(() => {
-    refetch();
-  }, []);
-
   return (
     <>
       {isLoading ? (
@@ -67,7 +62,7 @@ const CityCard: FC<CitiesCardProps> = ({ cityName }) => {
             />
             <Typography variant='h4' sx={styles.temperature}>
               <Typography component='span' color={'gray'} sx={{}}>
-                {moment().format('HH:mm:ss')}
+                {data?.updatedDate}
               </Typography>
               {temperatureFormat(data?.main?.temp)}
             </Typography>
@@ -76,7 +71,7 @@ const CityCard: FC<CitiesCardProps> = ({ cityName }) => {
           <CardContent sx={{ flex: '1 0 auto' }}>
             <Typography variant='h4' gutterBottom>
               <Tooltip title={`${data.name}, ${data?.sys?.country}`} placement='top-start'>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: '7px' }}>
+                <Box sx={styles.boxCardContent}>
                   <Typography variant='h4'>{data?.name}</Typography>
                   <Typography variant='h5'>({data?.sys?.country})</Typography>
                 </Box>

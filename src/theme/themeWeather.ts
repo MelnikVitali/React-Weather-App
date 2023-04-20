@@ -1,4 +1,4 @@
-import { ThemeOptions } from '@mui/material/styles';
+import { ThemeOptions, createTheme } from '@mui/material/styles';
 
 export const chartColors = {
   blue: '#1B9DB7',
@@ -17,7 +17,7 @@ export const chartColors = {
   blackColorTitles: '#000000',
 };
 
-export const ViewpointThemeOptions: ThemeOptions = {
+export const themeWeather: ThemeOptions = createTheme({
   typography: {
     fontFamily: 'Roboto, sans-serif',
   },
@@ -47,4 +47,4 @@ export const ViewpointThemeOptions: ThemeOptions = {
       },
     },
   },
-};
+});

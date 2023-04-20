@@ -6,6 +6,7 @@ export const styles = {
     justifyContent: 'center',
     marginTop: pxToRem(24),
     marginBottom: pxToRem(24),
+    flexGrow: 1,
   },
   formWrapper: {
     padding: '4px 3px 3px 10px',
