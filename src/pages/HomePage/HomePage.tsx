@@ -29,7 +29,7 @@ export const HomePage = () => {
     }
     setEmptySearchInput(false);
 
-    const { data }: any = await getCityWeather(cityName);
+    const { data }: any = await getCityWeather(cityName.trim().toLowerCase());
 
     if (data) {
       dispatch(addCity(data.name));
