@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Typography, Box, Paper } from '@mui/material';
 import TempCard from './HourTempCard';
-import { IHourlyForecast } from '../../interfaces/IHourlyForecast';
+import { IHourlyForecast } from '@/interfaces/IHourlyForecast';
 import { styles } from './styles';
 
 interface HourlyForecastProps {

@@ -14,11 +14,11 @@ import {
 import UpdateIcon from '@mui/icons-material/Update';
 import ClearIcon from '@mui/icons-material/Clear';
 import ReadMoreIcon from '@mui/icons-material/ReadMore';
-import { temperatureFormat } from '../../helpers/temperatureFormat';
-import { removeSavedCity } from '../../store/slices/weatherCitySlice';
-import { removeLocalStorage } from '../../helpers/localStorage';
-import { useAppDispatch } from '../../hooks/redux';
-import { useGetCityWeatherQuery } from '../../store/services/weather/cityWeatherApi';
+import { temperatureFormat } from '@/helpers/temperatureFormat';
+import { removeSavedCity } from '@/store/slices/weatherCitySlice';
+import { removeLocalStorage } from '@/helpers/localStorage';
+import { useAppDispatch } from '@/hooks/redux';
+import { useGetCityWeatherQuery } from '@/store/services/weather/cityWeatherApi';
 import { styles } from './styles';
 
 interface CitiesCardProps {

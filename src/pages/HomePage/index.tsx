@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { Box, Button, CircularProgress, Container, Grid, InputBase, Paper } from '@mui/material';
-import { useAppDispatch } from '../../hooks/redux';
-import { addCity } from '../../store/slices/weatherCitySlice';
-import { useGetCityMutation } from '../../store/services/weather/cityWeatherApi';
-import { addToLocalStorage } from '../../helpers/localStorage';
-import CitiesList from '../../components/CitiesList/CitiesList';
-import Header from '../../components/Header/Header';
+import { useAppDispatch } from '@/hooks/redux';
+import { addCity } from '@/store/slices/weatherCitySlice';
+import { useGetCityMutation } from '@/store/services/weather/cityWeatherApi';
+import { addToLocalStorage } from '@/helpers/localStorage';
+import CitiesList from '@/components/CitiesList';
+import Header from '@/components/Header';
 import { styles } from './styles';
 
 export const HomePage = () => {
   const [cityName, setCityName] = useState<string>('');
   const [emptySearchInput, setEmptySearchInput] = useState<boolean>(false);
 
-  const [getCityWeather, { data, error, isLoading }] = useGetCityMutation();
+  const [getCityWeather, { error, isLoading }] = useGetCityMutation();
 
   const dispatch = useAppDispatch();
 
@@ -56,12 +56,13 @@ export const HomePage = () => {
             )}
             <InputBase
               sx={styles.inputSearcher}
+              data-testid='input-search-by-city'
               placeholder='Search city...'
               autoComplete='off'
               value={cityName}
               onChange={searchHandler}
               autoFocus
-              onKeyPress={(e) => {
+              onKeyUp={(e) => {
                 if (e.key === 'Enter') {
                   addCityHandler();
                 }

@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import { Box, Paper } from '@mui/material';
-import { temperatureFormat } from '../../helpers/temperatureFormat';
 import { DateTime } from 'luxon';
+import { Box, Paper } from '@mui/material';
+import { temperatureFormat } from '@/helpers/temperatureFormat';
+import { IHourlyForecastList } from '@/interfaces/IHourlyForecast';
 import { styles } from './styles';
-import { IHourlyForecastList } from '../../interfaces/IHourlyForecast';
 
 interface HourTempCardProps {
   key: number;

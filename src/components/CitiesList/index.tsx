@@ -1,15 +1,16 @@
 import { FC, useEffect } from 'react';
 import { Grid } from '@mui/material';
-import CityCard from '../CityCard/CityCard';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { getLocalStorageCities } from '../../helpers/localStorage';
-import { getSavedCityNames } from '../../store/slices/weatherCitySlice';
+import { getSavedCities } from '@/store/selectors';
+import CityCard from '@/components/CityCard';
+import { getSavedCityNames } from '@/store/slices/weatherCitySlice';
+import { useAppDispatch, useAppSelector } from '@/hooks/redux';
+import { getLocalStorageCities } from '@/helpers/localStorage';
 import { styles } from './styles';
 
 const CitiesList: FC = () => {
   const dispatch = useAppDispatch();
 
-  const savedCities = useAppSelector((state) => state.citiesWeather.savedCitiesNames);
+  const savedCities = useAppSelector(getSavedCities);
 
   useEffect(() => {
     const localStorageCities = getLocalStorageCities();

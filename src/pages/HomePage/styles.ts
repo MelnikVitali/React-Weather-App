@@ -1,4 +1,4 @@
-import { pxToRem } from '../../helpers/pxToRem';
+import { pxToRem } from '@/helpers/pxToRem';
 
 export const styles = {
   container: {

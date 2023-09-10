@@ -1,8 +1,8 @@
 import { FetchBaseQueryError, createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { ICityWeather } from '../../../interfaces/ICityWeather';
-import { WEATHER_API_KEY, WEATHER_BASE_URL } from './config';
-import { IHourlyForecast } from '../../../interfaces/IHourlyForecast';
 import { DateTime } from 'luxon';
+import { ICityWeather } from '@/interfaces/ICityWeather';
+import { IHourlyForecast } from '@/interfaces/IHourlyForecast';
+import { WEATHER_API_KEY, WEATHER_BASE_URL } from '@/configs/APIUrls';
 
 // https://api.openweathermap.org/data/2.5
 

@@ -1,9 +1,16 @@
 import { Provider } from 'react-redux';
-import { store } from '../../store/store';
 import { MemoryRouter } from 'react-router-dom';
+import { setupStore } from '@/store';
+import { render } from '@testing-library/react';
+
+const store = setupStore();
 
 export const renderWithReduxAndRouter = (component: JSX.Element, initialRoute = '/') => {
-  <Provider store={store}>
-    <MemoryRouter initialEntries={[initialRoute]}>{component}</MemoryRouter>
-  </Provider>;
+  const renderResult = render(
+    <Provider store={store}>
+      <MemoryRouter initialEntries={[initialRoute]}>{component}</MemoryRouter>
+    </Provider>,
+  );
+
+  return { ...renderResult };
 };

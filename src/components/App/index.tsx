@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import HomePage from '../../pages/HomePage/HomePage';
-import CityWeatherPage from '../../pages/CityWeatherPage/CityWeatherPage';
-import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
-import Footer from '../Footer';
 import { Container } from '@mui/material';
+import HomePage from '@/pages/HomePage';
+import CityWeatherPage from '@/pages/CityWeatherPage';
+import NotFoundPage from '@/pages/NotFoundPage';
+import Footer from '@/components/Footer';
 import { styles } from './styles';
 
 function App() {

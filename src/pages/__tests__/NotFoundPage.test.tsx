@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import NotFoundPage from '../pages/NotFoundPage/NotFoundPage';
+import NotFoundPage from '@/pages/NotFoundPage';
 
 describe('Renders NotFoundPage', () => {
   beforeEach(() =>
