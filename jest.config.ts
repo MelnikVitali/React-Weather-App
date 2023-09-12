@@ -3,7 +3,7 @@ export default {
   testEnvironment: 'jsdom',
   rootDir: 'src',
   testMatch: ['**/?(*.)+(spec|test).+(ts|tsx|js)'],
-  setupFilesAfterEnv: ['<rootDir>/jestSetup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/tests/jestSetup.ts'],
   moduleNameMapper: {
     // '^src/(.+)$': '<rootDir>/$1',
     '^@/(.*)$': '<rootDir>/$1',

@@ -1,6 +1,8 @@
+import { pxToRem } from '@/helpers/pxToRem';
+
 export const styles = {
   container: {
     justifyContent: 'flex-start',
-    padding: '50px 0 0',
+    pt: pxToRem(16),
   },
 };

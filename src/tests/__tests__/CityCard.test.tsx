@@ -1,5 +1,5 @@
 import { waitFor } from '@testing-library/react';
-import { dummyCityWeather } from '@/tests/dummyCityWeather';
+import { dummyCityWeather } from '@/tests/mocks/dummyCityWeather';
 import CityCard from '@/components/CityCard';
 import { renderWithProviders } from '@/tests/helpers/renderWithProviders';
 

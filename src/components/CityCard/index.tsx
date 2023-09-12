@@ -27,7 +27,7 @@ interface CitiesCardProps {
 const CityCard: FC<CitiesCardProps> = ({ cityName }) => {
   const cityPageUrl = `/cities/${cityName}`;
 
-  const { data, isLoading, refetch } = useGetCityWeatherQuery(cityName);
+  const { data, error, isLoading, refetch } = useGetCityWeatherQuery(cityName);
 
   const dispatch = useAppDispatch();
 
@@ -74,6 +74,7 @@ const CityCard: FC<CitiesCardProps> = ({ cityName }) => {
                 <Box sx={styles.boxCardContent}>
                   <Typography variant='h4'>{data?.name}</Typography>
                   <Typography variant='h5'>({data?.sys?.country})</Typography>
+                  {error ? <Typography variant='h6'>oh no, there was an error</Typography> : null}
                 </Box>
               </Tooltip>{' '}
             </Typography>
@@ -91,19 +92,19 @@ const CityCard: FC<CitiesCardProps> = ({ cityName }) => {
           </CardContent>
           <CardActions sx={styles.cardActions}>
             <Tooltip title='Update' arrow>
-              <IconButton color='primary' onClick={updateCityWeather}>
+              <IconButton color='primary' onClick={updateCityWeather} data-testid='update-card'>
                 <UpdateIcon />
               </IconButton>
             </Tooltip>
             <Tooltip title='Details' arrow>
-              <NavLink to={cityPageUrl}>
+              <NavLink to={cityPageUrl} data-testid='details-card'>
                 <IconButton color='secondary'>
                   <ReadMoreIcon />
                 </IconButton>
               </NavLink>
             </Tooltip>
             <Tooltip title='Delete' arrow>
-              <IconButton onClick={deleteSavedCity}>
+              <IconButton onClick={deleteSavedCity} data-testid='close-card'>
                 <ClearIcon />
               </IconButton>
             </Tooltip>

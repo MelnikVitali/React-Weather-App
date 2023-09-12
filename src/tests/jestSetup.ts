@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { fetch, Headers, Request, Response } from 'cross-fetch';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { dummyCityWeather } from '@/tests/dummyCityWeather';
+import { dummyCityWeather } from '@/tests/mocks/dummyCityWeather';
 import { WEATHER_BASE_URL } from '@/configs/APIUrls';
 
 global.fetch = fetch;

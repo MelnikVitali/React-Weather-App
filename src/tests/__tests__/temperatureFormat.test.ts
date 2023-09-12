@@ -1,4 +1,4 @@
-import { temperatureFormat } from '../temperatureFormat';
+import { temperatureFormat } from '@/helpers/temperatureFormat';
 
 describe('temperatureFormat', () => {
   it('returns a value > 0', () => {

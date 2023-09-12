@@ -1,4 +1,8 @@
-import { addToLocalStorage, getLocalStorageCities, removeLocalStorage } from '../localStorage';
+import {
+  addToLocalStorage,
+  getLocalStorageCities,
+  removeLocalStorage,
+} from '@/helpers/localStorage';
 
 describe('localStorageCities', () => {
   it('returns null if the value does not exists', () => {
