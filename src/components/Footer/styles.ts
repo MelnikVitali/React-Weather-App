@@ -2,7 +2,7 @@ import { pxToRem } from '../../helpers/pxToRem';
 
 export const styles = {
   footerContainer: {
-    width: '100vw',
+    width: '100%',
     marginTop: 'auto',
     bgColor: 'background.paper',
     paddingTop: pxToRem(48),
