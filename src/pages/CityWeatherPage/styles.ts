@@ -5,6 +5,7 @@ export const styles = {
     maxWidth: pxToRem(1900),
     display: 'flex',
     flexDirection: 'column',
+    flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: 'center',
     margin: '0 auto',
@@ -19,11 +20,11 @@ export const styles = {
   title: { span: { color: '#1769aa' }, mb: 4 },
   titleError: { span: { color: '#d32f2f' }, mb: 4 },
   timeAndUpdateBox: {
-    minWidth: pxToRem(600),
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
     gap: pxToRem(6),
+    flexWrap: 'wrap',
   },
   updateIcon: {
     ':hover': { transform: 'scale(1.3)' },

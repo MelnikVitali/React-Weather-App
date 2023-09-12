@@ -71,7 +71,7 @@ const CityWeatherPage: FC = () => {
           <>
             <Paper elevation={3} sx={styles.contentBox}>
               <Grid container spacing={4}>
-                <Grid item xs={6} sm={6} md={4}>
+                <Grid item xs={12} sm={6} md={4}>
                   <Box sx={styles.currentTemp}>
                     <Typography fontSize={21}>Current Temp:</Typography>
                     <Typography fontSize={24}>{currentTemp}</Typography>
@@ -86,10 +86,8 @@ const CityWeatherPage: FC = () => {
                     Max Temp: {maxTemp}
                   </Typography>
                 </Grid>
-                {/* </Box> */}
 
-                {/* <Box sx={{ width: '33%' }}> */}
-                <Grid item xs={6} sm={6} md={4}>
+                <Grid item xs={12} sm={6} md={4}>
                   <Box sx={{ display: 'flex', alignItems: 'center', mt: '-18px' }}>
                     <img
                       src={`http://openweathermap.org/img/wn/${data?.weather[0]?.icon}@2x.png`}
@@ -106,10 +104,8 @@ const CityWeatherPage: FC = () => {
                     Sunset: {sunsetTime}
                   </Typography>
                 </Grid>
-                {/* </Box> */}
 
-                {/* <Box sx={{ width: '33%', ...styles.lastBox }}> */}
-                <Grid item xs={6} sm={6} md={4} sx={styles.lastBox}>
+                <Grid item xs={12} sm={6} md={4} sx={styles.lastBox}>
                   <Typography fontSize={20} mt='10px'>
                     Humidity: {data?.main?.humidity}%
                   </Typography>
