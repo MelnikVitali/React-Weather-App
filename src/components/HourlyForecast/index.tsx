@@ -14,7 +14,7 @@ const HourlyForecast: FC<HourlyForecastProps> = ({ dataList }) => {
       <Typography sx={styles.titleHourly} variant='h4'>
         Hourly Forecast
       </Typography>
-      <Paper elevation={3} sx={{ display: 'flex' }}>
+      <Paper elevation={3} sx={{ display: 'flex', flexWrap: 'wrap' }}>
         {dataList &&
           dataList
             .filter((el: any, index: number) => index < 9)

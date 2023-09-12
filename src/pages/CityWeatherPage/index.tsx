@@ -9,6 +9,7 @@ import {
   Button,
   Paper,
   CircularProgress,
+  Grid,
 } from '@mui/material';
 import UpdateIcon from '@mui/icons-material/Update';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -69,51 +70,57 @@ const CityWeatherPage: FC = () => {
         {data && (
           <>
             <Paper elevation={3} sx={styles.contentBox}>
-              <Box sx={{ width: '33%', paddingLeft: '40px' }}>
-                <Box sx={styles.currentTemp}>
-                  <Typography fontSize={21}>Current Temp:</Typography>
-                  <Typography fontSize={24}>{currentTemp}</Typography>
-                </Box>
-                <Typography fontSize={20} mb='15px'>
-                  Feels like: {feelsLikeTemp}
-                </Typography>
-                <Typography fontSize={20} mt='15px'>
-                  Min Temp: {minTemp}
-                </Typography>
-                <Typography fontSize={20} mb='15px'>
-                  Max Temp: {maxTemp}
-                </Typography>
-              </Box>
-
-              <Box sx={{ width: '33%' }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', mt: '-18px' }}>
-                  <img
-                    src={`http://openweathermap.org/img/wn/${data?.weather[0]?.icon}@2x.png`}
-                    alt={data?.weather[0]?.description}
-                  />
-                  <Typography fontSize={20} sx={{ textTransform: 'capitalize' }}>
-                    {data?.weather[0]?.description}
+              <Grid container spacing={4}>
+                <Grid item xs={6} sm={6} md={4}>
+                  <Box sx={styles.currentTemp}>
+                    <Typography fontSize={21}>Current Temp:</Typography>
+                    <Typography fontSize={24}>{currentTemp}</Typography>
+                  </Box>
+                  <Typography fontSize={20} mb='15px'>
+                    Feels like: {feelsLikeTemp}
                   </Typography>
-                </Box>
-                <Typography fontSize={20} pl={4}>
-                  Sunrise: {sunriseTime}
-                </Typography>
-                <Typography fontSize={20} pl={4}>
-                  Sunset: {sunsetTime}
-                </Typography>
-              </Box>
+                  <Typography fontSize={20} mt='15px'>
+                    Min Temp: {minTemp}
+                  </Typography>
+                  <Typography fontSize={20} mb='15px'>
+                    Max Temp: {maxTemp}
+                  </Typography>
+                </Grid>
+                {/* </Box> */}
 
-              <Box sx={{ width: '33%', ...styles.lastBox }}>
-                <Typography fontSize={20} mt='10px'>
-                  Humidity: {data?.main?.humidity}%
-                </Typography>
-                <Box sx={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
-                  <Typography fontSize={20}>Pressure: {data?.main?.pressure} hPa</Typography>
-                </Box>
-                <Box sx={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
-                  <Typography fontSize={20}>Wind Speed: {data?.wind?.speed} m/s</Typography>
-                </Box>
-              </Box>
+                {/* <Box sx={{ width: '33%' }}> */}
+                <Grid item xs={6} sm={6} md={4}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', mt: '-18px' }}>
+                    <img
+                      src={`http://openweathermap.org/img/wn/${data?.weather[0]?.icon}@2x.png`}
+                      alt={data?.weather[0]?.description}
+                    />
+                    <Typography fontSize={20} sx={{ textTransform: 'capitalize' }}>
+                      {data?.weather[0]?.description}
+                    </Typography>
+                  </Box>
+                  <Typography fontSize={20} pl={4}>
+                    Sunrise: {sunriseTime}
+                  </Typography>
+                  <Typography fontSize={20} pl={4}>
+                    Sunset: {sunsetTime}
+                  </Typography>
+                </Grid>
+                {/* </Box> */}
+
+                {/* <Box sx={{ width: '33%', ...styles.lastBox }}> */}
+                <Grid item xs={6} sm={6} md={4} sx={styles.lastBox}>
+                  <Typography fontSize={20} mt='10px'>
+                    Humidity: {data?.main?.humidity}%
+                  </Typography>
+                  <Box sx={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
+                    <Typography fontSize={20}>Pressure: {data?.main?.pressure} hPa</Typography>
+                  </Box>
+                  <Box sx={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
+                    <Typography fontSize={20}>Wind Speed: {data?.wind?.speed} m/s</Typography>
+                  </Box>
+                </Grid>
+              </Grid>
             </Paper>
 
             <HourlyForecast dataList={data.list} />

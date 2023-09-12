@@ -3,8 +3,6 @@ import { pxToRem } from '../../helpers/pxToRem';
 export const styles = {
   hourlyForecast: {
     position: 'relative',
-    maxWidth: pxToRem(992),
-    minWidth: pxToRem(932),
     borderBottom: '3px solid gray',
     padding: '0px 20px',
   },

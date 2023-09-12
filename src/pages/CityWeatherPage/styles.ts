@@ -3,7 +3,6 @@ import { pxToRem } from '@/helpers/pxToRem';
 export const styles = {
   container: {
     maxWidth: pxToRem(1900),
-    minWidth: pxToRem(500),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -39,11 +38,9 @@ export const styles = {
     display: 'flex',
     justifyContent: 'center',
     maxWidth: pxToRem(988),
-    minWidth: pxToRem(932),
     fontSize: pxToRem(18),
     marginBottom: pxToRem(20),
-    paddingTop: pxToRem(20),
-    paddingBottom: pxToRem(20),
+    padding: pxToRem(20),
     position: 'relative',
     backgroundColor: 'white',
     borderRadius: pxToRem(10),
@@ -61,7 +58,6 @@ export const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
-    paddingLeft: pxToRem(40),
     paddingBottom: pxToRem(14),
   },
 };
